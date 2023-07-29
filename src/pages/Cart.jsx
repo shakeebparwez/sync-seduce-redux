@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 export const Cart = () => {
   useTitle("Cart");
-  const products = useSelector(state => state.cartState.cartList);
+  const cartList = useSelector(state => state.cartState.cartList);
   const total = useSelector(state => state.cartState.total);
 
   // const products = [
@@ -15,8 +15,8 @@ export const Cart = () => {
   return (
     <main>
       <section className="cart">
-        <h1>Cart Items: {products.length} / ${total}</h1>
-        {products.map((product) => (
+        <h1>Cart Items: {cartList.length} / ${total}</h1>
+        {cartList.map((product) => (
           <CartCard key={product.id} product={product} />
         ))}
       </section>
